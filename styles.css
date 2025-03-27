@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --dark-blue: #7429C6;
+  --magenta: #C951E7;
+  --violet: #672171;
+  --gray-500: #4A5567;
+  --gray-400: #97A3B6;
+  --dark: #030616;
+  --light: #F2F5F9;
+
+  --rounded: .5rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+input,
+button {
+  text-decoration: none;
+  font-family: inherit;
+  color: inherit;
+
+  background: none;
+
+  border: none;
+
+  &:hover {
+    /* outline: none; */
+  }
+
+  &:focus {
+    /* outline: none; */
+  }
+}
+
+body {
+  display: grid;
+  place-content: center;
+
+  min-height: 100vh;
+
+  background: url('resources/bg-guess-the-word.jpg') no-repeat center center;
+  background-size: cover;
+
+  font-family: 'Outfit', sans-serif;
+  color: var(--light);
+}
+
+button {
+  padding: .4rem 2rem;
+
+  cursor: pointer;
+
+  color: var(--light);
+  font-size: .875rem;
+
+  background-color: var(--magenta);
+  filter: drop-shadow(0px 4px 0px #7b248a);
+
+  border-radius: var(--rounded);
+  
+  &:hover {
+    background-color: #b63ad5; /* based on #C951E7 */
+  }
+
+  &:active {
+    background-color: #a837c5; /* based on #C951E7 */
+  }
+}
+
+.text-lg {
+  font-size: 2rem;
+}
+
+.text-md {
+  font-size: 1.25rem;
+}
+
+.text-sm {
+  font-size: 0.75rem;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+}
+
+.main-container {
+  padding: 1.5rem 1.5rem;
+
+  background-color: #171e30;
+
+  border-radius: var(--rounded);
+}
+
+.text-box {
+  padding: .5rem 4rem;
+  margin-bottom: 1rem;
+
+  text-align: center;
+  letter-spacing: .8rem;
+
+  background-color: var(--gray-500);
+  box-shadow: 0px 4px 0px 0px #030616;
+
+  border-radius: var(--rounded);
+}
+
+.input-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .3rem;
+
+  margin: 2.5rem auto;
+}
+
+.input-box {
+  aspect-ratio: 1 / 1;
+  width: 2.5rem;
+
+  text-align: center;
+  
+  border: 2px solid var(--violet);
+  border-radius: var(--rounded);
+}
+
+.game-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.more-actions {
+  display: flex;
+  justify-content: space-evenly;
+}

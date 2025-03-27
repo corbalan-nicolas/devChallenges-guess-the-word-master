@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fun game about trying to guess the word">
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    >
+
+    <title>Guess The Word Game | devChallenges.io</title>
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="text-md">
+
+    <main class="main-container">
+      <img class="logo" src="resources/word-scramblle-logo.svg" alt="Word Scramble's Logo">
+
+      <div id="textBox" class="text-box text-lg">relowf</div>
+
+      <div id="gameData" class="game-data text-sm">
+        <p>Tries (4/5): </p>
+        <p>Mistakes: <span id="mistakes"></span></p>
+      </div>
+
+      <div id="inputsContainer" class="input-box-container">
+        <input class="input-box text-md" type="text" value="f">
+        <input class="input-box text-md" type="text" value="l">
+        <input class="input-box text-md" type="text" value="o">
+        <input class="input-box text-md" type="text" value="w">
+        <input class="input-box text-md" type="text" value="">
+        <input class="input-box text-md" type="text" value="">
+      </div>
+
+      <div class="more-actions">
+        <button id="btnRandom">Random</button>
+        <button id="btnReset">Reset</button>
+      </div>
+    </main>
+
+  </body>
+</html>
