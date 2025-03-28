@@ -15,31 +15,36 @@
     <title>Guess The Word Game | devChallenges.io</title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <script defer src="js/main.js" type="module"></script>
   </head>
   <body class="text-md">
 
     <main class="main-container">
       <img class="logo" src="resources/word-scramblle-logo.svg" alt="Word Scramble's Logo">
 
-      <div id="textBox" class="text-box text-lg">relowf</div>
+      <div id="textBox" class="text-box text-lg"></div>
 
       <div id="gameData" class="game-data text-sm">
-        <p>Tries (4/5): </p>
-        <p>Mistakes: <span id="mistakes"></span></p>
+        <p id="tries"></p>
+        <table>
+          <tr>
+            <td class="mistakes--title">Mistakes:</td>
+            <td id="mistakes" class="mistakes">
+              <span><span class="correct-one">_</span>u</span>
+              <span><span class="correct-one">_</span>n</span>
+              <span><span class="correct-one">_</span>s</span>
+            </td>
+          </tr>
+        </table>
       </div>
 
       <div id="inputsContainer" class="input-box-container">
-        <input class="input-box text-md" type="text" value="f">
-        <input class="input-box text-md" type="text" value="l">
-        <input class="input-box text-md" type="text" value="o">
-        <input class="input-box text-md" type="text" value="w">
-        <input class="input-box text-md" type="text" value="">
-        <input class="input-box text-md" type="text" value="">
       </div>
 
       <div class="more-actions">
-        <button id="btnRandom">Random</button>
-        <button id="btnReset">Reset</button>
+        <button id="random" title="Start a new random game (1)">Random</button>
+        <button id="reset" title="Reset the values of the actual game (2)">Reset</button>
       </div>
     </main>
 

@@ -105,7 +105,7 @@ button {
   margin-bottom: 1rem;
 
   text-align: center;
-  letter-spacing: .8rem;
+  word-spacing: .8rem;
 
   background-color: var(--gray-500);
   box-shadow: 0px 4px 0px 0px #030616;
@@ -123,13 +123,28 @@ button {
 }
 
 .input-box {
+  position: relative;
   aspect-ratio: 1 / 1;
   width: 2.5rem;
 
   text-align: center;
+  text-transform: lowercase;
   
   border: 2px solid var(--violet);
   border-radius: var(--rounded);
+
+  &:focus {
+    outline: 2px solid rgba(141, 141, 141, 0.6);
+    outline-offset: 0px;
+  }
+}
+
+.correct {
+  border-color: rgb(104, 181, 104);
+}
+
+.wrong {
+  border-color: rgb(189, 103, 103);
 }
 
 .game-data {
@@ -139,5 +154,20 @@ button {
 
 .more-actions {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.mistakes--title {
+  vertical-align: top;
+}
+
+.mistakes > span {
+  vertical-align: top;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.moradito {
+  color: var(--magenta);
 }
