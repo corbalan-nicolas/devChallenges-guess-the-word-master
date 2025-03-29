@@ -89,6 +89,10 @@ export class WordScramble {
   }
 
   drawNewGameOnTheDom() {
+    // Deletes any overlay
+    const overlay = document.querySelector('.overlay')
+    if(overlay !== null) overlay.remove()
+
     const textBox = document.getElementById('textBox')
     const tries = document.getElementById('tries')
     const mistakesContainer = document.getElementById('mistakes')
@@ -138,10 +142,22 @@ export class WordScramble {
             mistakesSpan.querySelector('span.correct-one').innerText = e.key.toLowerCase()
 
             if(this.#currentWord === this.#userGuess.join('')) {
-              alert('Congratulations, you won!')
+              // You WIN
+              const overlay = document.createElement('div')
+              overlay.className = 'overlay overlay--win'
+
+              overlay.innerHTML = `
+                <h2>You Won! :)</h2>
+                <p>Congratulations, you're an amazing person</p>
+
+                <small>Press "1" to start a new game</small>
+                <small>Or "2" to try again</small>
+              `
+
+              document.body.append(overlay)
             }
           }else {
-            // BADDDD YOU'RE TERRIBLE HAHAHAHAH LMAO
+            // Wrong :(
             input.className = inputClass + ' wrong '
             this.#triesLeft -= 1
             tries.innerText = `Tries (${this.#triesLeft}/${this.#maxTries}): `
@@ -151,7 +167,24 @@ export class WordScramble {
             }
 
             if(this.#triesLeft <= 0) {
-              alert('Perdiste :)')
+              // You loose
+
+              // Disable all the inputs so the user cannot play anymore (unless he/she has 300iq and know how to manipulate HTML from console)
+              inputsContainer.querySelectorAll('input').forEach(input => input.disabled = true)
+
+              // Create and show the overlay
+              const overlay = document.createElement('div')
+              overlay.className = 'overlay overlay--loose'
+
+              overlay.innerHTML = `
+                <h2>You loose :(</h2>
+                <p>Nice try tho ☝</p>
+
+                <small>Press "1" to start a new game</small>
+                <small>Or "2" to try again</small>
+              `
+
+              document.body.append(overlay)
             }
           }
 

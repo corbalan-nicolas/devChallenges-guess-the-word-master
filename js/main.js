@@ -20,12 +20,23 @@ wordScramble.drawNewGameOnTheDom()
 btnRandom.addEventListener('click', () => { wordScramble.startNewGame() })
 btnReset.addEventListener('click', () => { wordScramble.resetGame() })
 
+// Some shortcuts
 window.addEventListener('keydown', (e) => {
   if(e.code === 'Digit1') {
     wordScramble.startNewGame()
   }
-
+  
   if(e.code === 'Digit2') {
     wordScramble.resetGame()
   }
+  
+  if(e.code === 'Home') {
+    document.querySelector('#inputsContainer input:first-child').focus()
+  }
+  
+  if(e.code === 'End') {
+    document.querySelector('#inputsContainer input:last-child').focus()
+  }
+
+  // console.log(e.code)
 })

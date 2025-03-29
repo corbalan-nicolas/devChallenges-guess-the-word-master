@@ -168,6 +168,35 @@ button {
   text-orientation: upright;
 }
 
+.correct-one {
+  /* color: rgb(132, 164, 132); */
+}
+
 .moradito {
   color: var(--magenta);
+  /* background-color: rgba(255 255 255 / .05); */
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: rgba(0 0 0 / .6);
+  display: grid;
+  place-content: center;
+  text-align: center;
+
+  font-size: 2em;
+}
+
+.overlay--loose {
+  color: rgb(255, 205, 205);
+}
+
+.overlay--win {
+  color: rgb(211, 255, 205);
+
 }
