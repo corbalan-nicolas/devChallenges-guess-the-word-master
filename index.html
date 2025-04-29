@@ -14,39 +14,40 @@
 
     <title>Guess The Word Game | devChallenges.io</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .btn-shadow {
+        filter: drop-shadow(0px 4px 0px #7b248a);
+      }
 
-    <script defer src="js/main.js" type="module"></script>
+      .text-shadow {
+        box-shadow: 0px 4px 0px 0px #030616;
+      }
+    </style>
+
+    <script defer src="js/app.js"></script>
   </head>
-  <body class="text-md">
+  <body class="min-h-dvh grid place-content-center bg-[url('resources/bg.jpg')] bg-cover">
 
-    <main class="main-container">
-      <img class="logo" src="resources/word-scramblle-logo.svg" alt="Word Scramble's Logo">
+    <div class="w-100 p-8 bg-[#171e30] text-white rounded-xl">
+      <h1 class="hidden">Word Scramblle</h1>
+      <img class="mx-auto mb-8" src="resources/word-scramblle-logo.svg" alt="Word Scramblle">
 
-      <div id="textBox" class="text-box text-lg"></div>
-
-      <div id="gameData" class="game-data text-sm">
-        <p id="tries"></p>
-        <table>
-          <tr>
-            <td class="mistakes--title">Mistakes:</td>
-            <td id="mistakes" class="mistakes">
-              <span><span class="correct-one">_</span>u</span>
-              <span><span class="correct-one">_</span>n</span>
-              <span><span class="correct-one">_</span>s</span>
-            </td>
-          </tr>
-        </table>
+      <div class="text-shadow py-5 tracking-widest rounded-xl text-6xl text-center bg-[#4a5567]">
+        <p id="scrambleWord">Scrambled word</p>
       </div>
 
-      <div id="inputsContainer" class="input-box-container">
-      </div>
+      <p class="my-8">Tries left: <span id="triesLeft">?</span>/5</p>
 
-      <div class="more-actions">
-        <button id="random" title="Start a new random game (1)">Random</button>
-        <button id="reset" title="Reset the values of the actual game (2)">Reset</button>
+      <form id="inputsForm" class="flex flex-wrap justify-center gap-2 my-8" action="#">
+        <!-- Dynamic -->
+      </form>
+
+      <div class="flex justify-center items-center gap-4 mt-8">
+        <button class="btn-shadow py-3 px-6 rounded-lg bg-[#c951e7] text-white" id="btnRandom">Random</button>
+        <button class="btn-shadow py-3 px-6 rounded-lg bg-[#c951e7] text-white" id="btnReset">Reset</button>
       </div>
-    </main>
+    </div>
 
   </body>
 </html>
